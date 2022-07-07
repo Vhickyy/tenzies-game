@@ -1,13 +1,232 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-weight: bolder;
+}
+.container{
+    max-width: 500px;
+    height: 80vh;
+    background-color: black;
+    margin: 10vh auto;
+    display: grid;
+}
+.container2{
+    background-color: coral;
+    margin: 20px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 40px;
+    position: relative;
+}
+.header{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    font-size: x-large;
+    font-weight: bolder;
+}
+.header .ran{
+    width: 50px;
+    height: 50px;
+    
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.btn-container{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+}
+button{
+    font-size: larger;
+    width: 200px;
+    height: 50px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: none;
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    margin: 30px 0 0 0;
+}
+ .game-container{
+    margin: 30px 0 0 0;
+    display: flex;
+    justify-content: space-between;
+}
+.game-container button{
+    width: 80px;
+    height: 30px;
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+
+.select-1{
+    box-sizing: border-box;
+    padding: 40px 60px 0px 60px;
+}
+.select-die{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.select-die .three{
+    height:  70px;
+}
+
+h2{
+    text-align: center;
+    text-transform: capitalize;
+}
+.game button{
+    width: 50px;
+}
+.grid{
+    padding: 0 20px;
+    /* margin: auto; */
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    place-items: center;
+    gap:7px;
+}
+.play{
+    width: 100px;
+    height: 30px;
+}
+.home{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+.container2 p{
+    margin-right: -210px;
+    font-size: large;
+}
+.complete{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.dots{
+    padding: 0;
+    width: 8px;
+    height: 8px;
+    background-color:blue;
+    border-radius: 50%;
+}
+.ran {
+    /* background-color: gold; */
+    width: 60px;
+    height: 60px;
+    padding: 3px;
+    background-color: white;
+    border-radius: 5px;
+    /* margin: 10px; */
+    display: grid;
+    place-items: center;
+    grid-template-areas: 
+    "a . b"
+    "c d e"
+    "f . g";
+}
+.one .dots:first-child{
+    grid-area: d;
+}
+.two .dots:last-child{
+    grid-area: g;
+}
+.three .dots:nth-child(2){
+    grid-area: g;
+}
+.three .dots:nth-child(3) {
+    grid-area: d;
+}
+.four .dots:nth-child(2) {
+    grid-area: b;
+}
+
+.four .dots:nth-child(3) {
+    grid-area: f;
+}
+.four .dots:nth-child(4) {
+    grid-area: g;
+}
+.five .dots:nth-child(2) {
+    grid-area: b;
+}
+
+.five .dots:nth-child(3) {
+    grid-area: d;
+}
+
+.five .dots:nth-child(4) {
+    grid-area: f;
+}
+.five .dots:nth-child(5) {
+    grid-area: g;
+}
+.six .dot:first-child{
+    grid-area: a;
+}
+.six .dots:nth-child(2) {
+    grid-area: b;
+}
+
+.six .dots:nth-child(3) {
+    grid-area: c;
+}
+
+.six .dots:nth-child(4) {
+    grid-area: e;
+}
+
+.six .dots:nth-child(5) {
+    grid-area: f;
+}
+.six .dots:nth-child(6) {
+    grid-area: g;
+}
+.num {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: large;
+    font-weight: bolder;
+}
+.scoring{
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+}
+ .score{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0 100px;
+    margin-bottom: 5px;
+} 
+.score .right{
+    margin-left: 25px;
+}
+.score .left {
+    margin-right: 25px;
+}
+.top{
+    margin-bottom: 180px;
+}
+.instruction{
+    position: absolute;
+    bottom: 200px;
+    left: 50px;
+}
+.high{
+    height: 70px;
 }

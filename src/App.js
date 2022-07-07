@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import Home from './components/Home';
+import './index.css'
+import Game from './components/Game';
+import Instruction from './components/Instruction';
+import Score from './components/Score';
+import {useTenziesContext} from './components/TenziesContext'
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+  const {game,goBack } = useTenziesContext();
+  return <main className='container'>
+        <div className='container2'>
+          <div className='header'>
+          <h1>Tenzies</h1>
+          <div className='ran five'>
+            <div className='dots'></div>
+            <div className='dots'></div>
+            <div className='dots'></div>
+            <div className='dots'></div>
+            <div className='dots'></div>
+          </div>
+          </div>
+        {!game.play && <Home />}
+        {game.instruction && <Instruction/>}
+        {game.score && <Score/>}
+        {game.newt && <Game/>}
+        {(game.instruction || game.score) && <button onClick={goBack} className='home'>back</button>}
+        </div>
+  </main>
+  
 }
 
 export default App;
