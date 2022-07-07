@@ -69,7 +69,7 @@ const Playing = () => {
   return (
     <>
         {!tenzies && (<>
-            <h2 className='title'>Lorem ipsum dolor sit amet.</h2>
+            <h2 className='title'>Roll and hold die till all dice are the same</h2>
             <p>Time: <span style={count>5?{color:'green'}:{color:'red'}}>00:{count < 10 ? `0${count}` : count}</span></p>
             <div className='grid'>
             {dice.map((die)=>{
